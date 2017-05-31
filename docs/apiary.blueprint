@@ -1,0 +1,255 @@
+FORMAT: 1A
+
+# Things
+
+
+## Types Collection [/types]
+
+### List All Types of Things [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "1",
+                "name": "Buttons",
+                "description": "Internet-connected buttons.",
+                "icon": "hdr_strong"
+            },
+            {
+                "id": "2",
+                "name": "Environment",
+                "description": "Things that read information from the environment around them.",
+                "icon": "nature_people"
+            }
+        ]
+
+## Things Collection [/things?typeId={typeId}]
+
++ Parameters
+    + typeId (number, `1`)
+
+### List All Things of a Type [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "1",
+                "serialNumber": "",
+                "name": "AWS IoT Button",
+                "description": "A connected button with single and double tap events.",
+                "icon": "hdr_strong",
+                "typeId": "1",
+                "pieceId": [
+                    1,
+                    2
+                ]
+            }
+        ]
+
+## Things Collection 2 [/things?typeId=2]
+
+### List All Things of a Type [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "2",
+                "serialNumber": "",
+                "name": "Scanner",
+                "description": "A connected scanner with GPS location services.",
+                "icon": "location_on",
+                "typeId": "2",
+                "pieceId": [
+                    3,
+                    4,
+                    5
+                ]
+            }
+        ]
+
+## Piece [/piece/{id}]
+
+### Get Piece Record [GET]
+
++ Response 200 (application/json)
+
+        {
+            "id": "1",
+            "serialNumber": "",
+            "name": "AWS IoT Button battery",
+            "description": "",
+            "icon": "battery_std",
+            "url": "",
+            "token": "",
+            "normalEvent": {
+                "serialNumber": "",
+                "batteryVoltageMv": 1708,
+                "clickType": "SINGLE"
+            },
+            "diagnosticEvent": {
+                "serialNumber": "",
+                "batteryVoltageMv": null,
+                "clickType": "SINGLE"
+            },
+            "warningEvent": {
+                "serialNumber": "",
+                "batteryVoltageMv": 1000,
+                "clickType": "SINGLE"
+            },
+            "faultEvent": {
+                "serialNumber": "",
+                "batteryVoltageMv": 500,
+                "clickType": "SINGLE"
+            }
+        }
+
+## Piece 2 [/piece/2]
+
+### Get Piece 2 Record [GET]
+
++ Response 200 (application/json)
+
+        {
+            "id": "2",
+            "serialNumber": "",
+            "name": "AWS IoT Button wifi",
+            "description": "Description of AWS IoT Button wifi",
+            "icon": "network_wifi",
+            "url": "",
+            "token": "",
+            "normalEvent": {
+                "serialNumber": "",
+                "rssiDb": -55
+            },
+            "diagnosticEvent": {
+                "serialNumber": "",
+                "rssiDb": null
+            },
+            "warningEvent": {
+                "serialNumber": "",
+                "rssiDb": -75
+            },
+            "faultEvent": {
+                "serialNumber": "",
+                "rssiDb": -85
+            }
+        }
+
+## Piece 3 [/piece/3]
+
+### Get Piece 3 Record [GET]
+
++ Response 200 (application/json)
+
+        {
+            "id": "3",
+            "serialNumber": "",
+            "name": "Scanner battery",
+            "description": "Description of Scanner battery",
+            "icon": "battery_std",
+            "url": "",
+            "token": "",
+            "normalEvent": {
+                "serialNumber": "",
+                "batteryVoltageMv": 1708,
+                "clickType": "SINGLE"
+            },
+            "diagnosticEvent": {
+                "serialNumber": "",
+                "batteryVoltageMv": null,
+                "clickType": "SINGLE"
+            },
+            "warningEvent": {
+                "serialNumber": "",
+                "batteryVoltageMv": 1000,
+                "clickType": "SINGLE"
+            },
+            "faultEvent": {
+                "serialNumber": "",
+                "batteryVoltageMv": 500,
+                "clickType": "SINGLE"
+            }
+        }
+
+## Piece 4 [/piece/4]
+
+### Get Piece 4 Record [GET]
+
++ Response 200 (application/json)
+
+        {
+            "id": "4",
+            "serialNumber": "",
+            "name": "Scanner wifi",
+            "description": "Description of Scanner wifi",
+            "icon": "network_wifi",
+            "url": "",
+            "token": "",
+            "normalEvent": {
+                "serialNumber": "",
+                "rssiDb": -55
+            },
+            "diagnosticEvent": {
+                "serialNumber": "",
+                "rssiDb": null
+            },
+            "warningEvent": {
+                "serialNumber": "",
+                "rssiDb": -75
+            },
+            "faultEvent": {
+                "serialNumber": "",
+                "rssiDb": -85
+            }
+        }
+
+## Piece 5 [/piece/5]
+
+### Get Piece 5 Record [GET]
+
++ Response 200 (application/json)
+
+        {
+            "id": "5",
+            "serialNumber": "",
+            "name": "Scanner GPS",
+            "description": "Description of Scanner GPS",
+            "icon": "location_on",
+            "url": "",
+            "token": "",
+            "normalEvent": {
+                "serialNumber": "",
+                "time": 1496171894,
+                "longitudeN": 4003.9040,
+                "latitudeW": 10512.5792,
+                "numberOfSatellitesSeen": 8,
+                "altitudeInMeters": 1577.9
+            },
+            "diagnosticEvent": {
+                "serialNumber": "",
+                "time": 1496171894,
+                "longitudeN": 4003.9040,
+                "latitudeW": 10512.5792,
+                "numberOfSatellitesSeen": null,
+                "altitudeInMeters": 1577.9
+            },
+            "warningEvent": {
+                "serialNumber": "",
+                "time": 1496171894,
+                "longitudeN": 4003.9040,
+                "latitudeW": 10512.5792,
+                "numberOfSatellitesSeen": 3,
+                "altitudeInMeters": 1577.9
+            },
+            "faultEvent": {
+                "serialNumber": "",
+                "time": 1496171894,
+                "longitudeN": 4003.9040,
+                "latitudeW": 10512.5792,
+                "numberOfSatellitesSeen": 2,
+                "altitudeInMeters": 1577.9
+            }
+        }
